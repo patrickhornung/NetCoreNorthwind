@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Product>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                ProductId
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            @await Html.PartialAsync("_ProductsTable", product)
+        }
+    </tbody>
+</table>

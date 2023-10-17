@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Northwind ERP System";
+}
+
+<h2>Northwind Traders ERP System</h2>
+<h4>Welcome</h4>
+<h5>Product Management</h5>
+<div>
+    <p>
+        The five most expensive products we have...
+    </p>
+    @await Component.InvokeAsync("ProductsGallery", new {number = 5})
+</div>

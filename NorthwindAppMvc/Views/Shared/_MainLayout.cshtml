@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+<body>
+    <nav>
+
+    </nav>
+    <main class="container">
+        @RenderBody()
+    </main>
+    @RenderSection("Scripts", false)
+</body>
+</html>

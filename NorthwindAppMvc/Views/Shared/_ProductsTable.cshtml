@@ -1,0 +1,12 @@
+﻿@model Product
+
+<tr>
+    <td>@Model.ProductId</td>
+    <td>@Model.ProductName</td>
+    <td>@Model.UnitPrice!.Value!.ToString("0.00")€</td>
+    <td>
+        <a asp-action="Details" asp-controller="Products" asp-route-productId="@Model.ProductId">
+            Details
+        </a>
+    </td>
+</tr>
