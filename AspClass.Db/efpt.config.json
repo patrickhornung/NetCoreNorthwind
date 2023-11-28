@@ -68,7 +68,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "(localdb)\\MSSQLLocalDB.Northwind",
+   "UiHint": "localhost\\sqlExpress.Northwind",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

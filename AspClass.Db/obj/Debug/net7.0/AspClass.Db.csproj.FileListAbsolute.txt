@@ -22,3 +22,15 @@ D:\Development\Code\Dotnet\AspClassCode\AspClass.Db\obj\Debug\net7.0\AspClass.Db
 D:\Development\Code\Dotnet\AspClassCode\AspClass.Db\obj\Debug\net7.0\refint\AspClass.Db.dll
 D:\Development\Code\Dotnet\AspClassCode\AspClass.Db\obj\Debug\net7.0\AspClass.Db.pdb
 D:\Development\Code\Dotnet\AspClassCode\AspClass.Db\obj\Debug\net7.0\ref\AspClass.Db.dll
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\bin\Debug\net7.0\AspClass.Db.deps.json
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\bin\Debug\net7.0\AspClass.Db.dll
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\bin\Debug\net7.0\AspClass.Db.pdb
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\AspClass.Db.csproj.AssemblyReference.cache
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\AspClass.Db.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\AspClass.Db.AssemblyInfoInputs.cache
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\AspClass.Db.AssemblyInfo.cs
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\AspClass.Db.csproj.CoreCompileInputs.cache
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\AspClass.Db.dll
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\refint\AspClass.Db.dll
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\AspClass.Db.pdb
+C:\Development\Dotnet\NetCoreNorthwind\AspClass.Db\obj\Debug\net7.0\ref\AspClass.Db.dll

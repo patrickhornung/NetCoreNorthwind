@@ -3331,24 +3331,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\patri\\.nuget\\packages\\": {},
-    "D:\\Development\\Tools\\VisualStudioTools\\Shared\\NuGetPackages": {}
+    "C:\\Users\\hornungp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\Code\\Dotnet\\AspClassCode\\AuthWebApp\\AuthWebApp.csproj",
+      "projectUniqueName": "C:\\Development\\Dotnet\\NetCoreNorthwind\\AuthWebApp\\AuthWebApp.csproj",
       "projectName": "AuthWebApp",
-      "projectPath": "D:\\Development\\Code\\Dotnet\\AspClassCode\\AuthWebApp\\AuthWebApp.csproj",
-      "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\Code\\Dotnet\\AspClassCode\\AuthWebApp\\obj\\",
+      "projectPath": "C:\\Development\\Dotnet\\NetCoreNorthwind\\AuthWebApp\\AuthWebApp.csproj",
+      "packagesPath": "C:\\Users\\hornungp\\.nuget\\packages\\",
+      "outputPath": "C:\\Development\\Dotnet\\NetCoreNorthwind\\AuthWebApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\Development\\Tools\\VisualStudioTools\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\hornungp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3356,8 +3351,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "http://priartifactory.prinovis.com:8083/repository/nuget-public/index.json": {}
       },
       "frameworks": {
         "net7.0": {
@@ -3419,8 +3414,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://priartifactory.prinovis.com:8083/repository/nuget-public/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }
