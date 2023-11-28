@@ -11259,19 +11259,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hornungp\\.nuget\\packages\\": {}
+    "C:\\Users\\treptem\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\Dotnet\\NetCoreNorthwind\\NorthwindAppMvc\\NorthwindAppMvc.csproj",
+      "projectUniqueName": "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\NorthwindAppMvc\\NorthwindAppMvc.csproj",
       "projectName": "NorthwindAppMvc",
-      "projectPath": "C:\\Development\\Dotnet\\NetCoreNorthwind\\NorthwindAppMvc\\NorthwindAppMvc.csproj",
-      "packagesPath": "C:\\Users\\hornungp\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\Dotnet\\NetCoreNorthwind\\NorthwindAppMvc\\obj\\",
+      "projectPath": "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\NorthwindAppMvc\\NorthwindAppMvc.csproj",
+      "packagesPath": "C:\\Users\\treptem\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\NorthwindAppMvc\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\hornungp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\treptem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11279,15 +11283,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "http://priartifactory.prinovis.com:8083/repository/nuget-public/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Development\\Dotnet\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj": {
-              "projectPath": "C:\\Development\\Dotnet\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj"
+            "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj": {
+              "projectPath": "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj"
             }
           }
         }
@@ -11336,7 +11339,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },

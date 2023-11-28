@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\Dotnet\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj": {}
+    "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj": {}
   },
   "projects": {
-    "C:\\Development\\Dotnet\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj": {
+    "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Dotnet\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj",
+        "projectUniqueName": "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj",
         "projectName": "AspClass.Db",
-        "projectPath": "C:\\Development\\Dotnet\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj",
-        "packagesPath": "C:\\Users\\hornungp\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Dotnet\\NetCoreNorthwind\\AspClass.Db\\obj\\",
+        "projectPath": "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\AspClass.Db\\AspClass.Db.csproj",
+        "packagesPath": "C:\\Users\\treptem\\.nuget\\packages\\",
+        "outputPath": "C:\\Work\\Projekte\\dotnetCore\\NetCoreNorthwind\\AspClass.Db\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\hornungp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\treptem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
