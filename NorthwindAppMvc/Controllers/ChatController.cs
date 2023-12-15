@@ -30,6 +30,9 @@ namespace NorthwindAppMvc.Controllers
     WriteIndented = true,
     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
 };
+        Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
+        Response.Headers.Add("Access-Control-Allow-Methods", "GET");
+        Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
 
                 var personAsJson = JsonSerializer.Serialize(person, options);
 
