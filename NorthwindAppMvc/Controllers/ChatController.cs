@@ -8,10 +8,11 @@ namespace NorthwindAppMvc.Controllers
     public class ChatController : Controller
     {
         [HttpGet()]
-        public HttpResponseMessage GetMessageRes() {
+        public HttpResponseMessage GetMessageRes()
+        {
             HttpResponseMessage resMessage = new HttpResponseMessage(System.Net.HttpStatusCode.OK);
             resMessage.Content = new StringContent("{\"Message\"}");
-            return resMessage;            
+            return resMessage;
         }
 
         [HttpGet()]
@@ -19,29 +20,36 @@ namespace NorthwindAppMvc.Controllers
         {
             try
             {
-                var person = new Person(){
-                    Name="John"
-                    , Age = 30
-                    , Car = "Mercedes"
-                };
+
 
                 var options = new JsonSerializerOptions
-{
-    WriteIndented = true,
-    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-};
-        Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
-        Response.Headers.Add("Access-Control-Allow-Methods", "GET");
-        Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
+                {
+                    WriteIndented = true,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+                Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
+                Response.Headers.Add("Access-Control-Allow-Methods", "GET");
+                Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
 
-                var personAsJson = JsonSerializer.Serialize(person, options);
+                var persons = GetPersons();
+                var personAsJson = JsonSerializer.Serialize(persons, options);
 
                 return Ok(personAsJson);
             }
             catch (Exception ex)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, "{\"error\": \"" + ex.Message + "\"}") ;
+                return StatusCode((int)HttpStatusCode.InternalServerError, "{\"error\": \"" + ex.Message + "\"}");
             }
+        }
+
+        private ICollection<Person> GetPersons()
+        {
+            ICollection<Person> persons = new List<Person>();
+
+            persons.Add(new Person() { Name = "Mike", Status = "online" });
+            persons.Add(new Person() { Name = "Patrick", Status = "offline" });
+
+            return persons;
         }
     }
 }

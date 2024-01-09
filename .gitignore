@@ -7,3 +7,7 @@ NorthwindAppMvc/obj/Debug/net7.0/project.razor.vscode.bin
 NorthwindAppRazor/obj/Debug/net7.0/NorthwindAppRazor.csproj.AssemblyReference.cache
 NorthwindAppRazor/obj/Debug/net7.0/project.razor.vscode.bin
 NorthwindService/obj/Debug/net7.0/NorthwindService.csproj.AssemblyReference.cache
+AspClass.Db/bin/Debug/net7.0/AspClass.Db.dll
+AspClass.Db/bin/Debug/net7.0/AspClass.Db.pdb
+NorthwindAppMvc/obj/Debug/net7.0/NorthwindAppMvc.csproj.AssemblyReference.cache
+NorthwindAppMvc/obj/Debug/net7.0/project.razor.vscode.bin
