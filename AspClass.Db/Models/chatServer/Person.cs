@@ -3,7 +3,6 @@
 public class Person
 {
 public string Name{get;set;}
-public int Age{get;set;}
-public string Car{get;set;}
+public string Status{get;set;}
 
 }
