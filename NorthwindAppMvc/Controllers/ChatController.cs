@@ -2,11 +2,20 @@ using System.Net;
 using System.Text.Json;
 using AspClass.Db;
 using Microsoft.AspNetCore.Mvc;
+using AspClass.Db.SqlServer.Models;
+using System.Net.NetworkInformation;
 
 namespace NorthwindAppMvc.Controllers
 {
     public class ChatController : Controller
     {
+        private readonly NorthwindContext _db;
+
+        public ChatController(NorthwindContext context)
+        {
+            _db = context;
+        }
+
         [HttpGet()]
         public HttpResponseMessage GetMessageRes()
         {
@@ -16,7 +25,7 @@ namespace NorthwindAppMvc.Controllers
         }
 
         [HttpGet()]
-        public IActionResult GetMessage()
+        public IActionResult GetUsers()
         {
             try
             {
@@ -31,10 +40,10 @@ namespace NorthwindAppMvc.Controllers
                 Response.Headers.Add("Access-Control-Allow-Methods", "GET");
                 Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
 
-                var persons = GetPersons();
-                var personAsJson = JsonSerializer.Serialize(persons, options);
+                var chatUsers = GetChatUsers();
+                var chatUsersAsJson = JsonSerializer.Serialize(chatUsers, options);
 
-                return Ok(personAsJson);
+                return Ok(chatUsersAsJson);
             }
             catch (Exception ex)
             {
@@ -42,14 +51,98 @@ namespace NorthwindAppMvc.Controllers
             }
         }
 
-        private ICollection<Person> GetPersons()
+        private ICollection<ChatUser> GetChatUsers()
         {
-            ICollection<Person> persons = new List<Person>();
+            var chatUsers = _db.ChatUsers.ToList();
 
-            persons.Add(new Person() { Name = "Mike", Status = "online" });
-            persons.Add(new Person() { Name = "Patrick", Status = "offline" });
+            return chatUsers;
+        }
 
-            return persons;
+        [HttpGet()]
+        public IActionResult GetMessages([FromQuery(Name = "idSender")] int pIdSender, [FromQuery(Name = "idReceiver")] int pIdReceiver)
+        {
+            try
+            {
+
+
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+                Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
+                Response.Headers.Add("Access-Control-Allow-Methods", "GET");
+                Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
+
+                var chatMessages = GetChatMessages(pIdSender, pIdReceiver);
+                var chatMessagesAsJson = JsonSerializer.Serialize(chatMessages, options);
+
+                return Ok(chatMessagesAsJson);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, "{\"error\": \"" + ex.Message + "\"}");
+            }
+        }
+
+        private ICollection<ChatMessage> GetChatMessages(int pIdSender, int pIdReceiver)
+        {
+
+            var channelAsSender = GetChatChannel(pIdSender, pIdReceiver);
+            var channelAsReceiver = GetChatChannel(pIdReceiver, pIdSender);
+
+            var chatMessages = _db.ChatMessages.Where(i => i.IdChatChannel == channelAsSender.Id || i.IdChatChannel == channelAsReceiver.Id).OrderBy(i => i.SendDate).ToList();
+
+            return chatMessages;
+
+        }
+
+        private ChatChannel GetChatChannel(int pIdSender, int pIdReceiver)
+        {
+            var channel = _db.ChatChannels.FirstOrDefault(i => i.IdChatUserSender == pIdSender && i.IdChatUserReceiver == pIdReceiver);
+            return channel;
+        }
+
+                [HttpPost()]
+        public IActionResult SendMessage([FromBody]ChatMessageDto pMessage)
+        {
+            try
+            {
+
+
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+                Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
+                Response.Headers.Add("Access-Control-Allow-Methods", "GET");
+                Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
+
+                var chatMessage = CreateChatMessage(pMessage);
+                var chatMessagesAsJson = JsonSerializer.Serialize(chatMessage, options);
+
+                return Ok(chatMessagesAsJson);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, "{\"error\": \"" + ex.Message + "\"}");
+            }
+        }
+
+        private ChatMessage CreateChatMessage(ChatMessageDto pMessageDto){
+            var message = new ChatMessage(){
+                Id = 2
+                , IdChatChannel = 1
+                , IsDeleted = false
+                , Message = pMessageDto.Message
+                , SendDate = DateTime.Now
+            };
+
+            _db.ChatMessages.Add(message);
+            _db.SaveChanges();
+
+            return message;
         }
     }
 }
