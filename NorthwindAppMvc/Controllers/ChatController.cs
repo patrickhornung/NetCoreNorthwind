@@ -131,8 +131,12 @@ namespace NorthwindAppMvc.Controllers
         }
 
         private ChatMessage CreateChatMessage(ChatMessageDto pMessageDto){
+
+var lastMessage = GetLastMessage();
+int nextId = lastMessage!= null ? lastMessage.Id + 1 : 1;
+
             var message = new ChatMessage(){
-                Id = 2
+                Id = nextId
                 , IdChatChannel = 1
                 , IsDeleted = false
                 , Message = pMessageDto.Message
@@ -142,6 +146,11 @@ namespace NorthwindAppMvc.Controllers
             _db.ChatMessages.Add(message);
             _db.SaveChanges();
 
+            return message;
+        }
+
+        private ChatMessage GetLastMessage(){
+            var message = _db.ChatMessages.OrderByDescending(i => i.Id).FirstOrDefault();
             return message;
         }
     }
