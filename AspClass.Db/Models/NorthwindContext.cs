@@ -21,6 +21,12 @@ public partial class NorthwindContext : DbContext
 
     public virtual DbSet<Customer> Customers { get; set; }
 
+    public virtual DbSet<ChatUser> ChatUsers { get; set; }
+
+    public virtual DbSet<ChatMessage> ChatMessages { get; set; }
+
+    public virtual DbSet<ChatChannel> ChatChannels { get; set; }
+
     public virtual DbSet<CustomerDemographic> CustomerDemographics { get; set; }
 
     public virtual DbSet<Employee> Employees { get; set; }
