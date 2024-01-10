@@ -109,15 +109,19 @@ namespace NorthwindAppMvc.Controllers
             try
             {
 
-
+                        if (Request.Method.Equals("OPTIONS")) {
+                            Response.Headers.Add("content-type", "application/json");
+                            Response.StatusCode = 200;
+                        }
                 var options = new JsonSerializerOptions
                 {
                     WriteIndented = true,
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 };
                 Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
-                Response.Headers.Add("Access-Control-Allow-Methods", "GET");
-                Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
+                Response.Headers.Add("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+                Response.Headers.Add("Access-Control-Max-Age", "1000");
+                Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, authorization");
 
                 var chatMessage = CreateChatMessage(pMessage);
                 var chatMessagesAsJson = JsonSerializer.Serialize(chatMessage, options);
