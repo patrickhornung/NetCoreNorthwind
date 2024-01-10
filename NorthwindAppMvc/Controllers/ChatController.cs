@@ -103,8 +103,8 @@ namespace NorthwindAppMvc.Controllers
             return channel;
         }
 
-                [HttpPost()]
-        public IActionResult SendMessage([FromBody]ChatMessageDto pMessage)
+                [HttpGet()]
+        public IActionResult SendMessage([FromQuery(Name = "idSender")] int pIdSender, [FromQuery(Name = "idReceiver")] int pIdReceiver, [FromQuery(Name = "message")] string pMessage)
         {
             try
             {
@@ -119,7 +119,8 @@ namespace NorthwindAppMvc.Controllers
                 Response.Headers.Add("Access-Control-Allow-Methods", "GET");
                 Response.Headers.Add("Access-Control-Allow-Headers", "x-requested-with, Content-Type, origin, authorization, accept, client-security-token");
 
-                var chatMessage = CreateChatMessage(pMessage);
+
+                var chatMessage = CreateChatMessage(pIdSender, pIdReceiver, pMessage);
                 var chatMessagesAsJson = JsonSerializer.Serialize(chatMessage, options);
 
                 return Ok(chatMessagesAsJson);
@@ -130,16 +131,19 @@ namespace NorthwindAppMvc.Controllers
             }
         }
 
-        private ChatMessage CreateChatMessage(ChatMessageDto pMessageDto){
+        private ChatMessage CreateChatMessage(int pIdSender, int pIdReceiver, string pMessage){
 
 var lastMessage = GetLastMessage();
+
+var channel = this.GetChatChannel(pIdSender, pIdReceiver);
+
 int nextId = lastMessage!= null ? lastMessage.Id + 1 : 1;
 
             var message = new ChatMessage(){
                 Id = nextId
-                , IdChatChannel = 1
+                , IdChatChannel = channel.Id
                 , IsDeleted = false
-                , Message = pMessageDto.Message
+                , Message = pMessage
                 , SendDate = DateTime.Now
             };
 
