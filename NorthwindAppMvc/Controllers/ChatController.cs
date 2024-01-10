@@ -46,8 +46,8 @@ namespace NorthwindAppMvc.Controllers
         {
             ICollection<Person> persons = new List<Person>();
 
-            persons.Add(new Person() { Name = "Mike", Status = "online" });
-            persons.Add(new Person() { Name = "Patrick", Status = "offline" });
+            persons.Add(new Person() { Id= 1, Name = "Mike", Status = "online" });
+            persons.Add(new Person() { Id= 2, Name = "Patrick", Status = "offline" });
 
             return persons;
         }
