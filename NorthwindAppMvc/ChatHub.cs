@@ -9,5 +9,10 @@ namespace NorthwindAppMvc
             await Clients.All.SendAsync("ReceiveMessage", user, message);
             // https://localhost:7268/Home/chat
         }
+
+        public async Task SendNewUser(string userName)
+        {
+            await Clients.All.SendAsync("NewUser", userName);
+        }
     }
 }
