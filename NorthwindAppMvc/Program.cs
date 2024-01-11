@@ -14,6 +14,13 @@ builder.Services.AddDbContext<NorthwindContext>(options => {
 
 // Add SignalR
 builder.Services.AddSignalR();
+builder.Services.AddCors(options => {
+    options.AddPolicy("CorsPolicy", builder => builder
+    .WithOrigins("http://localhost:4200")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials());
+});
 
 var app = builder.Build();
 
@@ -29,5 +36,6 @@ app.MapControllerRoute(
 );
 
 app.MapHub<ChatHub>("/chatHub");
+app.UseCors("CorsPolicy");
 
 app.Run();
